@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Justan Online Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Justan Online Store</h1>
+    <p>No backend required — send order by FormSubmit</p>
+  </header>
+
+  <main class="container">
+    <section class="products-section">
+      <h2>Products</h2>
+      <p>Select items and click "Add to Cart"</p>
+      <div id="products" class="products-grid"></div>
+    </section>
+
+    <section class="cart-section">
+      <h2>Your Cart</h2>
+      <div id="cart-items">
+        <p class="empty-cart">Cart is empty</p>
+      </div>
+
+      <div class="subtotal-box">
+        <h3>Subtotal</h3>
+        <p id="subtotal">$0.00</p>
+      </div>
+
+      <div class="checkout-box">
+        <h3>Checkout details</h3>
+
+        <form id="orderForm" action="https://formsubmit.co/justanchen2010@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New Order - Justan Online Store">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="Order Details" id="orderInput">
+
+          <label for="fullName">Full name</label>
+          <input type="text" id="fullName" name="Full Name" required>
+
+          <label for="email">Your email</label>
+          <input type="email" id="email" name="Customer Email" required>
+
+          <label for="address">Shipping address</label>
+          <textarea id="address" name="Shipping Address" required></textarea>
+
+          <label for="notes">Notes (optional)</label>
+          <textarea id="notes" name="Notes"></textarea>
+
+          <div class="button-group">
+            <button type="submit" id="checkoutBtn">Send Order</button>
+            <button type="button" id="copyBtn">Copy order text</button>
+          </div>
+        </form>
+
+        <p class="note">
+          First time using FormSubmit: check your email inbox and click the verification link.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
